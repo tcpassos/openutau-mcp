@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Data-only contracts of the bridge protocol (DTOs, ops, error codes, JSON context).
+    These sources are also compiled INTO the bridge DLL by file link, so they
+    must not depend on anything but the BCL.
+  -->
+  <PropertyGroup>
+    <RootNamespace>OpenUtauMcp.Contracts</RootNamespace>
+  </PropertyGroup>
+
+</Project>

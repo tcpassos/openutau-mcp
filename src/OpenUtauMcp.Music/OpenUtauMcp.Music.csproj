@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Pure musical domain: phrases, humanization. No OpenUtau, no I/O, no clock,
+    no global Random. Input = immutable snapshots + parameters + seed; output = a plan.
+  -->
+  <PropertyGroup>
+    <RootNamespace>OpenUtauMcp.Music</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="OpenUtauMcp.Music.Tests" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>openutau-mcp</AssemblyName>
+    <RootNamespace>OpenUtauMcp.Server</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ModelContextProtocol" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OpenUtauMcp.Contracts\OpenUtauMcp.Contracts.csproj" />
+    <ProjectReference Include="..\OpenUtauMcp.Music\OpenUtauMcp.Music.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="OpenUtauMcp.Server.Tests" />
+  </ItemGroup>
+
+</Project>

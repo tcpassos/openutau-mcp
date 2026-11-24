@@ -1,0 +1,13 @@
+bin/
+obj/
+*.user
+.vs/
+*.wav
+*-autosave.ustx
+__pycache__/
+
+# Local only: design notes (Portuguese), Python prototypes, the live test log and agent instructions.
+/docs/
+/exemplos/
+/tests/live/
+/CLAUDE.md

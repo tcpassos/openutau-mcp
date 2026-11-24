@@ -1,0 +1,61 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    The bridge runs INSIDE OpenUtau, loaded from its Plugins folder with Assembly.LoadFile.
+    It must be a single DLL: the contracts are compiled in by file link and the only
+    references are OpenUtau.Core and Serilog from the installed OpenUtau (Private=false).
+    After updating OpenUtau, rebuild and reinstall:  dotnet build src/OpenUtauMcp.Bridge -c Release -t:Install
+  -->
+  <PropertyGroup>
+    <AssemblyName>OpenUtauMcp.Bridge</AssemblyName>
+    <RootNamespace>OpenUtauMcp.Bridge</RootNamespace>
+    <CoreDll>$(OpenUtauDir)\OpenUtau.Core.dll</CoreDll>
+    <BridgeInstallDir>$(OpenUtauPluginsDir)\McpBridge</BridgeInstallDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\OpenUtauMcp.Contracts\**\*.cs" Exclude="..\OpenUtauMcp.Contracts\obj\**;..\OpenUtauMcp.Contracts\bin\**" LinkBase="Contracts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="OpenUtau.Core">
+      <HintPath>$(CoreDll)</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Serilog">
+      <HintPath>$(OpenUtauDir)\Serilog.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <!-- Embeds the SHA-256 of the OpenUtau.Core.dll we compile against; checked at runtime. -->
+  <Target Name="GenerateCoreIdentity" BeforeTargets="CoreCompile">
+    <GetFileHash Files="$(CoreDll)" Algorithm="SHA256" HashEncoding="hex">
+      <Output TaskParameter="Hash" PropertyName="CoreDllSha256" />
+    </GetFileHash>
+    <PropertyGroup>
+      <CoreIdentityFile>$(IntermediateOutputPath)CoreIdentity.g.cs</CoreIdentityFile>
+    </PropertyGroup>
+    <WriteLinesToFile File="$(CoreIdentityFile)" Overwrite="true" WriteOnlyWhenDifferent="true"
+                      Lines="namespace OpenUtauMcp.Bridge%3B;internal static class CoreIdentity { public const string Sha256 = &quot;$(CoreDllSha256.ToLowerInvariant())&quot;%3B }" />
+    <ItemGroup>
+      <Compile Include="$(CoreIdentityFile)" />
+      <FileWrites Include="$(CoreIdentityFile)" />
+    </ItemGroup>
+  </Target>
+
+  <!-- Fails the build if the output would need more than one DLL. -->
+  <Target Name="AssertSingleDll" AfterTargets="Build">
+    <ItemGroup>
+      <_BridgeOutputDlls Include="$(OutDir)*.dll" />
+    </ItemGroup>
+    <Error Condition="'@(_BridgeOutputDlls->Count())' != '1'" Text="The bridge must build to a single DLL, found: @(_BridgeOutputDlls)" />
+  </Target>
+
+  <Target Name="Install" DependsOnTargets="Build">
+    <MakeDir Directories="$(BridgeInstallDir)" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(BridgeInstallDir)" />
+    <Message Importance="high" Text="Bridge installed to $(BridgeInstallDir). Restart OpenUtau to load it." />
+  </Target>
+
+</Project>

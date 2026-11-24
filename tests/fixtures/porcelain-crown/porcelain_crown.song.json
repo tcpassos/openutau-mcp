@@ -1,0 +1,73 @@
+{
+  "title": "Porcelain Crown",
+  "bpm": 124,
+  "timeSig": "4/4",
+  "key": "Dm",
+  "sections": [
+    { "name": "intro", "role": "intro", "bars": 8, "chords": ["Dm", "Bb", "Gm", "A", "Dm", "Bb", "Gm", "A"] },
+    { "name": "verse1", "role": "verse", "bars": 8, "chords": ["Dm", "Bb", "Gm", "A", "Dm", "Bb", "Gm", "A"] },
+    { "name": "pre1", "role": "pre", "bars": 4, "chords": ["Bb", "C", "Dm", "A"] },
+    { "name": "chorus1", "role": "chorus", "bars": 8, "chords": ["Dm", "Bb", "F", "C", "Dm", "Bb", "Gm", "A"] },
+    { "name": "drop1", "role": "drop", "bars": 8, "chords": ["Dm", "Bb", "F", "C", "Dm", "Bb", "F", "C"] },
+    { "name": "verse2", "role": "verse", "bars": 8, "chords": ["Dm", "Bb", "Gm", "A", "Dm", "Bb", "Gm", "A"] },
+    { "name": "pre2", "role": "pre", "bars": 4, "chords": ["Bb", "C", "Dm", "A"] },
+    { "name": "chorus2", "role": "chorus", "bars": 8, "chords": ["Dm", "Bb", "F", "C", "Dm", "Bb", "Gm", "A"] },
+    { "name": "bridge", "role": "bridge", "bars": 8, "chords": ["Bb", "F", "C", "Dm", "Bb", "F", "Gm", "A"] },
+    { "name": "chorus3", "role": "chorus", "bars": 8, "chords": ["Dm", "Bb", "F", "C", "Dm", "Bb", "Gm", "A"] },
+    { "name": "drop2", "role": "drop", "bars": 8, "chords": ["Dm", "Bb", "F", "C", "Dm", "Bb", "F", "C"] },
+    { "name": "outro", "role": "outro", "bars": 4, "chords": ["Dm", "Bb", "Gm", "Dm"] }
+  ],
+  "voices": [
+    {
+      "name": "Lead",
+      "humanize": { "preset": "natural", "seed": 7 },
+      "lines": [
+        { "section": "verse1", "lyrics": "Can-dles burn-ing in the hall of glass", "pitches": "A3 A3 D4 D4 E4 F4 E4 D4 D4", "rhythm": "1/8*8 3q", "restAfter": "1q" },
+        { "section": "verse1", "lyrics": "All the mir-rors show a hid-den past", "pitches": "A3 A3 D4 D4 E4 F4 G4 F4 E4", "rhythm": "1/8*8 3q", "restAfter": "1q" },
+        { "section": "verse1", "lyrics": "I was gen-tle when the night was young", "pitches": "A3 A3 D4 D4 E4 F4 A4 G4 F4", "rhythm": "1/8*8 3q", "restAfter": "1q" },
+        { "section": "verse1", "lyrics": "Now I'm sing-ing with a sil-ver tongue", "pitches": "G4 F4 E4 D4 E4 F4 E4 D4 C#4", "rhythm": "1/8*8 3q", "restAfter": "1q" },
+
+        { "section": "pre1", "lyrics": "Hear the bells be-gin to ring", "pitches": "D4 D4 F4 F4 G4 F4 E4", "rhythm": "1q 1/8 1/4. 1q 1q 1q 1/4.", "restAfter": "1/8" },
+        { "section": "pre1", "lyrics": "Bow be-fore your shad-ow queen", "pitches": "F4 F4 A4 A4 G4 G4 A4", "rhythm": "1q 1/8 1/4. 1q 1q 1q 1/4.", "restAfter": "1/8" },
+
+        { "section": "chorus1", "lyrics": "I wear a por-ce-lain crown", "pitches": "A4 A4 G4 F4 G4 A4 D5", "rhythm": "1/8 1q 1/8 1/8 1/8 1/8 3.5q", "restAfter": "1q" },
+        { "section": "chorus1", "lyrics": "I let the king-dom burn down", "pitches": "A4 A4 G4 F4 G4 A4 C5", "rhythm": "1/8 1q 1/8 1/8 1/8 1/8 3.5q", "restAfter": "1q" },
+        { "section": "chorus1", "lyrics": "You'll nev-er hear me make a sound", "pitches": "A4 A4 G4 A4 G4 F4 E4 F4", "rhythm": "1/8*3 1q 1/8*3 3q", "restAfter": "1q" },
+        { "section": "chorus1", "lyrics": "Un-til the stars are fall-ing down", "pitches": "G4 G4 A4 Bb4 A4 G4 F4 E4", "rhythm": "1/8*3 1q 1/8*3 3q", "restAfter": "1q" },
+
+        { "section": "verse2", "lyrics": "Vel-vet whis-pers in the throne room dark", "pitches": "A3 A3 D4 D4 E4 F4 E4 D4 D4", "rhythm": "1/8*8 3q", "restAfter": "1q" },
+        { "section": "verse2", "lyrics": "Gold-en prom-ise leaves a cru-el mark", "pitches": "A3 A3 D4 D4 E4 F4 G4 F4 E4", "rhythm": "1/8*8 3q", "restAfter": "1q" },
+        { "section": "verse2", "lyrics": "You were laugh-ing when you locked the door", "pitches": "A3 A3 D4 D4 E4 F4 A4 G4 F4", "rhythm": "1/8*8 3q", "restAfter": "1q" },
+        { "section": "verse2", "lyrics": "Now you're beg-ging on the mar-ble floor", "pitches": "G4 F4 E4 D4 E4 F4 E4 D4 C#4", "rhythm": "1/8*8 3q", "restAfter": "1q" },
+
+        { "section": "pre2", "sameAs": "pre1" },
+        { "section": "chorus2", "sameAs": "chorus1" },
+
+        { "section": "bridge", "lyrics": "Let it crack, let it shat-ter", "pitches": "D4 F4 F4 D4 F4 A4 F4", "rhythm": "1/8 1/8 2q 1/8 1/8 1q 2q", "restAfter": "1q" },
+        { "section": "bridge", "lyrics": "All the lies that you told me", "pitches": "E4 E4 G4 E4 F4 A4 F4", "rhythm": "1/8 1/8 2q 1/8 1/8 1q 2q", "restAfter": "1q" },
+        { "section": "bridge", "lyrics": "Let it fall, let it scat-ter", "pitches": "F4 F4 A4 F4 G4 C5 A4", "rhythm": "1/8 1/8 2q 1/8 1/8 1q 2q", "restAfter": "1q" },
+        { "section": "bridge", "lyrics": "There is no one to hold me", "pitches": "G4 G4 Bb4 A4 G4 C#5 A4", "rhythm": "1/8 1/8 2q 1/8 1/8 1q 2q", "restAfter": "1q" },
+
+        { "section": "chorus3", "sameAs": "chorus1" },
+
+        { "section": "outro", "lyrics": "Por-ce-lain crown", "pitches": "A4 G4 F4 D4", "rhythm": "1q 1q 1q 5q", "restAfter": "8q" }
+      ]
+    },
+    {
+      "name": "Harmony",
+      "humanize": { "preset": "backing", "seed": 23 },
+      "derive": { "from": "Lead", "kind": "harmony", "interval": "third_below", "roles": ["chorus"] }
+    },
+    {
+      "name": "Chops",
+      "humanize": { "preset": "chops", "seed": 5 },
+      "lines": [
+        { "section": "drop1", "lyrics": "Oh oh oh por-ce-lain", "pitches": "D5 C5 A4 A4 G4 F4", "rhythm": "1q r:1/8 1/8 1/4. r:1/8 1/8 1/8 1q", "restAfter": "2q" },
+        { "section": "drop1", "lyrics": "Oh oh oh por-ce-lain", "pitches": "D5 C5 A4 A4 G4 F4", "rhythm": "1q r:1/8 1/8 1/4. r:1/8 1/8 1/8 1q", "restAfter": "2q" },
+        { "section": "drop1", "lyrics": "Oh oh oh por-ce-lain", "pitches": "D5 C5 A4 A4 G4 F4", "rhythm": "1q r:1/8 1/8 1/4. r:1/8 1/8 1/8 1q", "restAfter": "2q" },
+        { "section": "drop1", "lyrics": "Oh oh oh crown", "pitches": "D5 C5 A4 D4", "rhythm": "1q r:1/8 1/8 1/4. r:1/8 3q", "restAfter": "1q" },
+        { "section": "drop2", "sameAs": "drop1" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="xunit" />
+    <PackageReference Include="xunit.runner.visualstudio" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+    <ProjectReference Include="..\..\src\OpenUtauMcp.Music\OpenUtauMcp.Music.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Golden data: CPython random values and the prototype's humanized project (test oracle). -->
+    <None Include="python-random-golden.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\fixtures\porcelain-crown\porcelain_crown.ustx" Link="golden\porcelain_crown.ustx" CopyToOutputDirectory="PreserveNewest" />
+    <!-- F2b: the SongSpec of Porcelain Crown and the prototype's notes (generated once from porcelain_crown.py). -->
+    <None Include="..\fixtures\porcelain-crown\porcelain_crown.song.json" Link="golden\porcelain_crown.song.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="golden\porcelain-crown-notes.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

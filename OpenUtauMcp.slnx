@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/OpenUtauMcp.Contracts/OpenUtauMcp.Contracts.csproj" />
+    <Project Path="src/OpenUtauMcp.Music/OpenUtauMcp.Music.csproj" />
+    <Project Path="src/OpenUtauMcp.Bridge/OpenUtauMcp.Bridge.csproj" />
+    <Project Path="src/OpenUtauMcp.Server/OpenUtauMcp.Server.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/OpenUtauMcp.Contracts.Tests/OpenUtauMcp.Contracts.Tests.csproj" />
+    <Project Path="tests/OpenUtauMcp.Music.Tests/OpenUtauMcp.Music.Tests.csproj" />
+    <Project Path="tests/OpenUtauMcp.Server.Tests/OpenUtauMcp.Server.Tests.csproj" />
+  </Folder>
+</Solution>

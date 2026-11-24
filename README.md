@@ -109,3 +109,8 @@ The bridge is compiled against the installed `OpenUtau.Core.dll` and checks its 
 OpenUtau Bridge plugin that speak DAW protocol 1.3 ([openutau/OpenUtau#2645](https://github.com/openutau/OpenUtau/pull/2645),
 [KakaruHayate/openutau-vst-bridge#20](https://github.com/KakaruHayate/openutau-vst-bridge/pull/20)); with older
 versions it links, scans and reports BPM as before.
+
+## License
+
+[MIT](LICENSE). The test song in `tests/fixtures` uses the LEONA -Ubasti- voicebank by Lotte V (CC BY 4.0), which is
+not included.
